@@ -1,0 +1,11 @@
+{
+  "name": "student-pro",
+  "version": "1.0.0",
+  "description": "Student Management System",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "body-parser": "^1.20.2"
+  }
+}
