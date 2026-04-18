@@ -1,0 +1,154 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Body */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    text-align: center;
+    color: white;
+    background: #0a0f0d;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #00ffcc, #003333);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: black;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+}
+
+/* Form */
+.form-box input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.form-box button {
+    padding: 10px 20px;
+    background: #00ffcc;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form-box button:hover {
+    transform: scale(1.05);
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* CARD (FIXED VISIBILITY ISSUE) */
+.card {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 15px auto;
+    width: 60%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    font-size: 18px;
+    color: white;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    background: #00c6ff;
+    color: white;
+}
+
+button:hover {
+    background: #0072ff;
+    transform: scale(1.05);
+}
+
+/* MODULE LIST */
+.vertical-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.module {
+    width: 320px;
+    padding: 15px;
+    margin: 15px;
+    background: rgba(0,255,200,0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.module:hover {
+    background: #00ffcc;
+    color: black;
+}
+
+/* LOGIN */
+.login-box {
+    width: 320px;
+    margin: 120px auto;
+    padding: 25px;
+    background: #111;
+    border-radius: 12px;
+}
+
+/* ========================= */
+/* 🎨 PAGE BACKGROUNDS FIXED */
+/* ========================= */
+
+/* 📝 Attendance - Light Brown */
+body.attendance {
+    background: #d2b48c;
+    color: #2b1b0e;
+}
+
+/* 💰 Fees - Dark Maroon */
+body.fees {
+    background: linear-gradient(135deg, #3b0a0a, #7b1e1e);
+    color: white;
+}
+
+/* 📊 Reports - Dark Violet */
+body.reports {
+    background: #2e003e;
+    color: white;
+}
+
+/* Containers alignment */
+#attendance, #fees, #reports {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

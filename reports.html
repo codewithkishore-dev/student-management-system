@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reports</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="reports"></body>
+
+<h2>📊 Reports & Analytics</h2>
+
+<div id="reports"></div>
+
+<script>
+async function loadReports() {
+    const res = await fetch("/students");
+    const students = await res.json();
+
+    let total = students.length;
+    let present = Math.floor(total * 0.75);
+    let absent = total - present;
+
+    document.getElementById("reports").innerHTML = `
+        <div class="card">
+            <h3>📌 Overall Summary</h3>
+
+            <p>Total Students: ${total}</p>
+            <p>Present Avg: ${present}</p>
+            <p>Absent Avg: ${absent}</p>
+
+            <p>Attendance Rate: ${total ? Math.round((present/total)*100) : 0}%</p>
+            <p>Fee Collection Rate: ${Math.floor(Math.random()*100)}%</p>
+        </div>
+    `;
+}
+
+loadReports();
+</script>
+
+</body>
+</html>

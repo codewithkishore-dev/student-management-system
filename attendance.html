@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attendance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="attendance">
+
+<h2>📝 Attendance Management</h2>
+
+<div id="attendance"></div>
+
+<script>
+async function loadAttendance() {
+    const res = await fetch("/students");
+    const students = await res.json();
+
+    let html = "";
+
+    if (students.length === 0) {
+        html = "<p>No students found</p>";
+    } else {
+        students.forEach(s => {
+            html += `
+            <div class="card">
+                <h3>👨‍🎓 ${s.name}</h3>
+                <p>${s.email}</p>
+                <p>${s.course}</p>
+
+                <p>✔ Present Days: ${Math.floor(Math.random()*30)}</p>
+                <p>❌ Absent Days: ${Math.floor(Math.random()*10)}</p>
+
+                <button>Mark Present</button>
+                <button>Mark Absent</button>
+            </div>
+            `;
+        });
+    }
+
+    document.getElementById("attendance").innerHTML = html;
+}
+
+loadAttendance();
+</script>
+
+</body>
+</html>
