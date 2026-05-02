@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Teacher Dashboard</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.dashboard {
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* TOP CARDS */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: #00c6ff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 22%;
+    color: white;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+th {
+    background: #0072ff;
+}
+
+.fail {
+    color: red;
+}
+
+/* ANNOUNCEMENT */
+.announcement {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>👨‍🏫 Teacher Dashboard</h2>
+<body class="teacher"></body>
+
+<div class="dashboard">
+
+
+    <!-- STATS -->
+    <div class="stats">
+        <div class="stat-box">👨‍🎓 Students: 50</div>
+        <div class="stat-box">📊 Avg Marks: 72%</div>
+        <div class="stat-box">✅ Pass: 80%</div>
+        <div class="stat-box">❌ Fail: 20%</div>
+    </div>
+
+    <!-- SUBJECT LIST -->
+    <div class="card">
+        <h3>📘 Subjects Handled</h3>
+        <p>Data Structures, DBMS, OS, Networks, Software Engg, Java</p>
+    </div>
+
+    <!-- MARKS TABLE -->
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Marks</th>
+            <th>Grade</th>
+            <th>Status</th>
+        </tr>
+
+        <tr>
+            <td>Kishore</td>
+            <td>Data Structures</td>
+            <td>82</td>
+            <td>A</td>
+            <td>Pass</td>
+        </tr>
+
+        <tr>
+            <td>Arun</td>
+            <td>DBMS</td>
+            <td>34</td>
+            <td>D</td>
+            <td class="fail">Fail</td>
+        </tr>
+    </table>
+
+    <!-- ADD MARKS -->
+    <div class="card">
+        <h3>📝 Enter Marks</h3>
+        <input placeholder="Student Name">
+        <input placeholder="Subject">
+        <input placeholder="Marks">
+        <button>Add Marks</button>
+    </div>
+
+    <!-- ANNOUNCEMENTS -->
+    <div class="announcement">
+        <h3>📢 Announcements</h3>
+        <p>Internal exams start next week</p>
+        <p>Upload marks before Friday</p>
+    </div>
+
+    <!-- LOGOUT -->
+    <br>
+    <button onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+function logout(){
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

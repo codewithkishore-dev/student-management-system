@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attendance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="attendance">
+
+<h2>📝 Attendance Management</h2>
+
+<div id="attendance"></div>
+
+<script>
+function loadAttendance() {
+    let students = JSON.parse(localStorage.getItem("students")) || [];
+    let html = "";
+
+    if (students.length === 0) {
+        html = "<p>No students added yet ❌</p>";
+    } else {
+        students.forEach(s => {
+            html += `
+            <div class="card">
+                <h3>${s.name}</h3>
+                <p>Present: ${s.present}</p>
+                <p>Absent: ${s.absent}</p>
+
+                <button onclick="mark(${s.id}, 'present')">✔ Present</button>
+                <button onclick="mark(${s.id}, 'absent')">❌ Absent</button>
+            </div>`;
+        });
+    }
+
+    document.getElementById("attendance").innerHTML = html;
+}
+
+function mark(id, type) {
+    let students = JSON.parse(localStorage.getItem("students")) || [];
+
+    students.forEach(s => {
+        if (s.id === id) {
+            if (type === "present") s.present++;
+            else s.absent++;
+        }
+    });
+
+    localStorage.setItem("students", JSON.stringify(students));
+    loadAttendance();
+}
+
+loadAttendance();
+</script>
+
+</body>
+</html>

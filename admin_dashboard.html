@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<body class="admin"></body>
+<style>
+.admin-container {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Title */
+.admin-container h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+/* Cards */
+.admin-card {
+    background: rgba(0,0,0,0.4);
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 12px;
+    font-size: 18px;
+    line-height: 1.8;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* Highlight */
+.highlight {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00ffcc;
+}
+
+/* Stats grid */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    width: 200px;
+    margin: 10px;
+    padding: 20px;
+    background: #00c6ff;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+/* Button */
+.logout-btn {
+    margin-top: 25px;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background: #ff4d4d;
+    color: white;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #cc0000;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+    <h2>🧑‍💼 Admin Dashboard</h2>
+
+    <!-- SCHOOL INFO -->
+    <div class="admin-card">
+        <p class="highlight">PSG College of Engineering and Technology</p>
+        <p><b>Principal:</b> Dr. Kishore M.Tech., Ph.D.</p>
+        <p><b>Correspondent:</b> Mr. Karthik Aravind M.E., Ph.D.</p>
+        <p><b>Established:</b> 1985</p>
+        <p><b>Years of Excellence:</b> 41 Years</p>
+    </div>
+
+    <!-- STATS -->
+    <div class="admin-card stats">
+        <div class="stat-box">👨‍🎓 Students: 1200</div>
+        <div class="stat-box">👨‍🏫 Teachers: 85</div>
+        <div class="stat-box">📚 Courses: 15</div>
+        <div class="stat-box">🏆 Pass Rate: 92%</div>
+    </div>
+
+    <!-- SYSTEM INFO -->
+    <div class="admin-card">
+        <p class="highlight">⚙️ System Information</p>
+        <p>ERP Version: 1.0</p>
+        <p>Last Updated: May 2026</p>
+        <p>Server Status: ✅ Running</p>
+    </div>
+
+    <!-- ANNOUNCEMENTS -->
+    <div class="admin-card">
+        <p class="highlight">📢 Announcements</p>
+        <p>• Annual Day scheduled for June 15</p>
+        <p>• Exam results will be published next week</p>
+        <p>• New admissions open</p>
+    </div>
+
+    <!-- LOGOUT -->
+    <button class="logout-btn" onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+function logout() {
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

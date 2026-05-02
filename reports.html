@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reports</title>
+
+<!-- ✅ CSS LINK -->
+<link rel="stylesheet" href="style.css?v=2">
+
+</head>
+
+<!-- ✅ VERY IMPORTANT -->
+<body class="reports">
+
+<h2>📊 Reports & Analytics</h2>
+
+<div id="reports"></div>
+
+<script>
+function loadReports() {
+    let students = JSON.parse(localStorage.getItem("students")) || [];
+
+    let total = students.length;
+
+    // ✅ Safe calculations (no undefined error)
+    let present = students.reduce((a, s) => a + (s.present || 0), 0);
+    let absent  = students.reduce((a, s) => a + (s.absent || 0), 0);
+    let paid    = students.filter(s => s.feePaid).length;
+
+    let attendanceRate = total ? Math.round((present / (present + absent || 1)) * 100) : 0;
+    let feeRate = total ? Math.round((paid / total) * 100) : 0;
+
+    document.getElementById("reports").innerHTML = `
+    <div class="card">
+        <h3>📌 Overall Report</h3>
+
+        <p>Total Students: ${total}</p>
+        <p>Total Present: ${present}</p>
+        <p>Total Absent: ${absent}</p>
+
+        <p>Attendance Rate: ${attendanceRate}%</p>
+
+        <p>Fees Paid: ${paid} / ${total}</p>
+        <p>Fee Collection Rate: ${feeRate}%</p>
+    </div>`;
+}
+
+loadReports();
+</script>
+
+</body>
+</html>

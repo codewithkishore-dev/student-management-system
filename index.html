@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart University ERP</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <h1>PSG College Of Engineering and Technology</h1>
+    <ul>
+        <li>Home</li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h3>Smart Student Management System</h3>
+    <p>Complete ERP solution for managing Universities efficiently</p>
+</section>
+
+<!-- ERP MODULES -->
+<section>
+    <h2>📦 ERP Modules</h2>
+
+    <div class="vertical-list">
+
+        <div class="module" onclick="goToLogin('student')">
+            👨‍🎓 Student Login
+        </div>
+
+        <div class="module" onclick="goToLogin('teacher')">
+            👨‍🏫 Teacher Login
+        </div>
+
+        <div class="module" onclick="goToLogin('admin')">
+            🧑‍💼 Admin Login
+        </div>
+
+        <div class="module" onclick="goToLogin('library')">
+            📚 Library Login
+        </div>
+
+        <div class="module" onclick="openModule('attendance')">
+            📝 Attendance Management
+        </div>
+
+        <div class="module" onclick="openModule('fees')">
+            💰 Fee Management
+        </div>
+
+        <div class="module" onclick="openModule('reports')">
+            📊 Reports & Analytics
+        </div>
+
+    </div>
+</section>
+
+<!-- ADD STUDENT FORM -->
+<section>
+    <h2>Add Student</h2>
+
+    <div class="form-box">
+        <input id="name" placeholder="Name">
+        <input id="email" placeholder="Email">
+        <input id="course" placeholder="Course">
+        <button onclick="addStudent()">Add Student</button>
+    </div>
+</section>
+
+<!-- STUDENT LIST -->
+<section>
+    <h2>Student Records</h2>
+    <div id="students" class="grid"></div>
+</section>
+
+<!-- FEATURES -->
+<section>
+    <h2>✨ Features</h2>
+
+    <div class="grid">
+        <div class="card">✔ Secure Login System</div>
+        <div class="card">✔ Real-time Data</div>
+        <div class="card">✔ Cloud Ready</div>
+        <div class="card">✔ Scalable Architecture</div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonial">
+    <h2>💬 Testimonials</h2>
+    <p>⭐⭐⭐⭐⭐ "Best University Management System Ever!"</p>
+    <p>⭐⭐⭐⭐⭐ "Easy to use and very efficient."</p>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+    <h2>⚙️ How It Works</h2>
+    <p>1. Login to system</p>
+    <p>2. Manage student data</p>
+    <p>3. Track attendance & reports</p>
+    <p>4. Generate insights</p>
+</section>
+
+<!-- SOCIAL MEDIA -->
+<section class="social">
+    <h2>🌐 Follow Us</h2>
+
+    <div class="social-links">
+        <a href="https://www.instagram.com/kishore_sivakumar_/" target="_blank">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">YouTube</a>
+        <a href="#">LinkedIn</a>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section>
+    <h2>❓ FAQ</h2>
+    <p>Q: Is this system secure?</p>
+    <p>A: Yes, it uses secure backend APIs.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Kishore | Smart School ERP</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

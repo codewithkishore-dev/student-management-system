@@ -1,0 +1,218 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Body */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    text-align: center;
+    color: white;
+    background: #0a0f0d;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #00ffcc, #003333);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: black;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+}
+
+/* Form */
+.form-box input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.form-box button {
+    padding: 10px 20px;
+    background: #00ffcc;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form-box button:hover{
+    transform: scale(1.05);
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 15px auto;
+    width: 60%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    font-size: 18px;
+    color: white;
+    text-align: center; /* ✅ FIX: center text inside cards */
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    background: #00c6ff;
+    color: white;
+}
+
+button:hover {
+    background: #0072ff;
+    transform: scale(1.05);
+}
+
+/* MODULE LIST */
+.vertical-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.module {
+    width: 320px;
+    padding: 15px;
+    margin: 15px;
+    background: rgba(0,255,200,0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.module:hover {
+    background: #00ffcc;
+    color: black;
+}
+
+/* LOGIN (FIXED) */
+.login-box {
+    width: 400px;
+    margin: 120px auto;
+    padding: 35px 30px;
+    background: #111;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+}
+
+.login-box button {
+    width: 60%;
+    margin: 15px auto;
+    display: block;
+}
+
+/* ========================= */
+/* 🎨 PAGE BACKGROUNDS */
+/* ========================= */
+
+/* 📝 Attendance */
+body.attendance {
+    background: #d2b48c;
+    color: #2b1b0e;
+}
+
+/* 💰 Fees */
+body.fees {
+    background: linear-gradient(135deg, #3b0a0a, #7b1e1e);
+    color: white;
+}
+
+/* 📊 Reports */
+body.reports {
+    background: goldenrod;
+    color: #ffd700;
+    text-align: center; /* ✅ FIX: center ALL text */
+}
+
+/* 🔥 IMPORTANT FIX (YOU WERE MISSING THIS) */
+body.reports .card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #ffd700;
+    color: #ffd700;
+}
+
+/* Containers alignment */
+#attendance, #fees, #reports {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* ✅ FIX: vertical centering */
+}
+/* ========================= */
+/* 🎨 DASHBOARD BACKGROUNDS */
+/* ========================= */
+
+/* 🧑‍💼 ADMIN → Gold + Black */
+body.admin {
+    background: linear-gradient(135deg, #000000, #1a1a1a, #d4af37);
+    color: #ffd700;
+}
+
+/* 👨‍🏫 TEACHER → Check pattern (black style) */
+body.teacher {
+    background-color: #111;
+    background-image:
+        linear-gradient(45deg, #222 25%, transparent 25%),
+        linear-gradient(-45deg, #222 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #222 75%),
+        linear-gradient(-45deg, transparent 75%, #222 75%);
+    background-size: 40px 40px;
+    color: white;
+}
+
+/* 📚 LIBRARY → Black & White */
+body.library {
+    background: linear-gradient(135deg, #000000, #ffffff);
+    color: black;
+}
+
+/* FIX text visibility inside cards */
+body.library .card {
+    color: black;
+    background: purple;
+}
+
+body.admin .card,
+body.teacher .card {
+    color: white;
+}

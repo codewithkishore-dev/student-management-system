@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="login-box">
+    <h2>👨‍🏫 Teacher Login</h2>
+
+    <input id="email" type="email" placeholder="Enter Email">
+    <input id="password" type="password" placeholder="Enter Password">
+
+    <!-- ✅ FIXED BUTTON -->
+    <button type="button" onclick="login()">Login</button>
+
+    <p id="error" style="color:red;"></p>
+</div>
+
+<script>
+function login() {
+    let email = document.getElementById("email").value.trim();
+    let pass = document.getElementById("password").value.trim();
+
+    if (!email || !pass) {
+        document.getElementById("error").innerText = "Enter Email & Password ❌";
+        return;
+    }
+
+    alert("Teacher Login Successful ✅");
+
+    // ✅ FIXED REDIRECT
+    setTimeout(() => {
+        window.location.href = "teacher_dashboard.html";
+    }, 300);
+}
+</script>
+
+</body>
+</html>

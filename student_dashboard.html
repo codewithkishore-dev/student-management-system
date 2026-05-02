@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Dashboard</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.marksheet {
+    width: 90%;
+    margin: 30px auto;
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.school-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #eee;
+}
+
+.total {
+    font-weight: bold;
+    background: #f5f5f5;
+}
+
+.result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="allMarkSheets"></div>
+
+<script>
+function generateMarks() {
+    return Math.floor(Math.random() * 100);
+}
+
+function getResult(mark) {
+    return mark >= 35 ? "Pass" : "Fail";
+}
+
+function loadMarkSheets() {
+
+    let students = JSON.parse(localStorage.getItem("students")) || [];
+    let html = "";
+
+    if (students.length === 0) {
+        html = "<h3 style='text-align:center'>No students found ❌</h3>";
+    }
+
+    students.forEach((s, index) => {
+
+        let subjects = ["Data Structures", "Operating Systems", "DBMS", "Networks", "Software Engg", "Java"];
+        let total = 0;
+        let fail = false;
+
+        let rows = "";
+
+        subjects.forEach(sub => {
+            let mark = generateMarks();
+            let result = getResult(mark);
+
+            if (mark < 35) fail = true;
+
+            total += mark;
+
+            rows += `
+            <tr>
+                <td>${sub}</td>
+                <td>100</td>
+                <td>35</td>
+                <td>${mark}</td>
+                <td style="color:${mark<35 ? 'red' : 'green'}">${result}</td>
+            </tr>`;
+        });
+
+        let finalResult = fail ? "ARREAR ❌" : "PASS ✅";
+
+        html += `
+        <div class="marksheet">
+
+            <div class="school-header">
+                <h2>🏫 PSG College Of Engineering and Technology</h2>
+                <h3>End Semester Exam Results - 2026</h3>
+            </div>
+
+            <div class="details">
+                <p><b>Student Name:</b> ${s.name}</p>
+                <p><b>Class:</b> III - ${String.fromCharCode(65 + index)}</p>
+                <p><b>Register No:</b> ${211423244070 + index}</p>
+                <p><b>Department:</b> CSBS</p>
+            </div>
+
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Max</th>
+                    <th>Min</th>
+                    <th>Marks</th>
+                    <th>Result</th>
+                </tr>
+
+                ${rows}
+
+                <tr class="total">
+                    <td>Total</td>
+                    <td>600</td>
+                    <td>-</td>
+                    <td>${total}</td>
+                    <td>${finalResult}</td>
+                </tr>
+            </table>
+
+            <div class="result">
+                FINAL RESULT: ${finalResult}
+            </div>
+
+        </div>`;
+    });
+
+    document.getElementById("allMarkSheets").innerHTML = html;
+}
+
+loadMarkSheets();
+</script>
+
+</body>
+</html>

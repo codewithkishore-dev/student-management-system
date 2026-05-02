@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fees</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="fees">
+
+<h2>💰 Fee Management</h2>
+
+<div id="fees"></div>
+
+<script>
+function loadFees() {
+    let students = JSON.parse(localStorage.getItem("students")) || [];
+    let html = "";
+
+    if (students.length === 0) {
+        html = "<p>No students found ❌</p>";
+    } else {
+        students.forEach(s => {
+            html += `
+            <div class="card">
+                <h3>${s.name}</h3>
+                <p>Status: ${s.feePaid ? "✅ Paid" : "❌ Not Paid"}</p>
+
+                <button onclick="toggleFee(${s.id})">
+                    Mark as ${s.feePaid ? "Unpaid" : "Paid"}
+                </button>
+            </div>`;
+        });
+    }
+
+    document.getElementById("fees").innerHTML = html;
+}
+
+function toggleFee(id) {
+    let students = JSON.parse(localStorage.getItem("students")) || [];
+
+    students.forEach(s => {
+        if (s.id === id) {
+            s.feePaid = !s.feePaid;
+        }
+    });
+
+    localStorage.setItem("students", JSON.stringify(students));
+    loadFees();
+}
+
+loadFees();
+</script>
+
+</body>
+</html>
